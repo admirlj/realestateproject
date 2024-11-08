@@ -1,7 +1,6 @@
 import {
   getKindeServerSession,
   LoginLink,
-  LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Button } from "@nextui-org/react";
 import UserProfilePanel from "./UserProfilePanel";

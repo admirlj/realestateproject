@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "./components/providers";
 import AppBar from "./components/AppBar";
-import App from "next/app";
 import SingInPanel from "./components/SignInPanel";
 
 const geistSans = localFont({

@@ -15,7 +15,7 @@ interface Props {
 }
 
 const UserProfilePanel = ({ user }: Props) => {
-  console.log("user", user);
+
   return (
     <Dropdown placement="bottom-start">
       <DropdownTrigger>

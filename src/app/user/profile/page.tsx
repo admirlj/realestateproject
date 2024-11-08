@@ -14,9 +14,6 @@ const UserProfile = async () => {
 
   const dbUser = user?.id ? await getUserById(user.id) : null;
 
-  if (!dbUser) {
-    redirect("/");
-  }
 
   return (
     <>
@@ -31,7 +28,7 @@ const UserProfile = async () => {
           <div className="flex flex-col items-center">
             <Avatar
               className="w-20 h-20"
-              src={dbUser.avatarUrl ?? "/profile.png"}
+              src={dbUser?.avatarUrl ?? "/profile.png"}
             />
             <UploadAvatar userId={user?.id} />
           </div>
@@ -39,12 +36,12 @@ const UserProfile = async () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Attribute
             title="Name"
-            value={`${dbUser.firstName} ${dbUser.lastName}`}
+            value={`${dbUser?.firstName} ${dbUser?.lastName}`}
           />
-          <Attribute title="Email" value={`${dbUser.email}`} />
+          <Attribute title="Email" value={`${dbUser?.email}`} />
           <Attribute
             title="Registreted On"
-            value={`${dbUser.createdAt.toLocaleDateString()}`}
+            value={`${dbUser?.createdAt?.toLocaleDateString()}`}
           />
           <Attribute
             title="Properties posted"

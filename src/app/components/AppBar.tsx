@@ -19,17 +19,16 @@ const AppBar = ({ children }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    {
+      label: "Profile",
+      href: "/user/profile",
+    },
+    {
+      label: "Log Out",
+      href: "#",
+    },
   ];
+
   return (
     <Navbar className="shadow-md" onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
@@ -48,14 +47,10 @@ const AppBar = ({ children }: Props) => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex gap-4"
-        justify="center"
-      ></NavbarContent>
       <NavbarContent justify="end">{children}</NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+        {menuItems.map(({ label, href }, index) => (
+          <NavbarMenuItem key={`${label}-${index}`}>
             <Link
               color={
                 index === 2
@@ -65,9 +60,9 @@ const AppBar = ({ children }: Props) => {
                   : "foreground"
               }
               className="w-full"
-              href="#"
+              href={href}
             >
-              {item}
+              {label}
             </Link>
           </NavbarMenuItem>
         ))}
