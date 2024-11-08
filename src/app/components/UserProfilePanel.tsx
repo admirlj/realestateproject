@@ -34,6 +34,9 @@ const UserProfilePanel = ({ user }: Props) => {
         <DropdownItem key="profile" className="h-14 gap-2">
           <Link href="/user/profile">Profile</Link>
         </DropdownItem>
+        <DropdownItem key="properties" className="h-14 gap-2">
+          <Link href="/user/properties">Properties</Link>
+        </DropdownItem>
         <DropdownItem key="logout" className="h-14 gap-2">
           <LogoutLink>Log Out</LogoutLink>
         </DropdownItem>

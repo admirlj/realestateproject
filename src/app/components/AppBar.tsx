@@ -24,6 +24,10 @@ const AppBar = ({ children }: Props) => {
       href: "/user/profile",
     },
     {
+      label: "Properties",
+      href: "/user/properties",
+    },
+    {
       label: "Log Out",
       href: "#",
     },
